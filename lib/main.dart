@@ -15,6 +15,9 @@ class App extends StatelessWidget{
       home: Scaffold(
         appBar: AppBar(
           title: Text('Wow'),
+          centerTitle: false,          
+          titleTextStyle: TextStyle(color: Colors.purple),
+          elevation: 99,
         ),
         body: Center(
           child: Text('Hellow world!'),
