@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_flutter_app/screens/home_screen.dart';
 
 void main() {
   runApp(const App());
@@ -7,15 +8,21 @@ void main() {
 class App extends StatelessWidget {
   const App({super.key});
 
-  final Color backgroundColor = const Color(0xFFE7626C);
-  final Color textColor = const Color(0xFF232B55);
-  final Color cardColor = const Color(0xFFF4EDDB);
-
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(),
+    return MaterialApp(
+      theme: ThemeData(
+        colorScheme:
+            ColorScheme.fromSwatch(backgroundColor: const Color(0xFFE7626C)),
+        textTheme: const TextTheme(
+          displayLarge: TextStyle(
+            color: Color(0xFF232B55),
+          ),
+        ),
+        cardColor: const Color(0xFFF4EDDB),
+      ),
+      home: const Scaffold(
+        body: HomeScreen(),
       ),
     );
   }
