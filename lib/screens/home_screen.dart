@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -10,6 +9,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int totalSecond = 1500;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,6 +34,8 @@ class _HomeScreenState extends State<HomeScreen> {
             flex: 3,
             child: Center(
               child: IconButton(
+                  iconSize: 120,
+                  color: Theme.of(context).cardColor,
                   onPressed: () {},
                   icon: const Icon(
                     Icons.play_circle_outline,
@@ -41,7 +44,40 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           Flexible(
             flex: 1,
-            child: Container(),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Theme.of(context).cardColor,
+                        borderRadius: BorderRadius.circular(50)),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Pomodoros',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color:
+                                Theme.of(context).textTheme.displayLarge!.color,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        Text(
+                          '0',
+                          style: TextStyle(
+                            fontSize: 60,
+                            color:
+                                Theme.of(context).textTheme.displayLarge!.color,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
